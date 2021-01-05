@@ -1,8 +1,8 @@
-import 'package:flash_chat/screens/login_screen.dart';
-import 'package:flash_chat/screens/registration_screen.dart';
+import 'package:messeco/constants.dart';
+import 'package:messeco/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:flash_chat/components/rounded_button.dart';
+import 'package:messeco/components/rounded_button.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static String id = 'welcome_screen';
@@ -26,7 +26,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     );
 
     animation = ColorTween(
-      begin: Colors.lightGreenAccent,
+      begin: kPrimaryColor,
       end: Colors.white,
     ).animate(controller);
 
@@ -58,7 +58,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                   tag: 'logo',
                   child: Container(
                     child: Image.asset('images/logo.png'),
-                    height: 70,
+                    height: 80,
                   ),
                 ),
                 SizedBox(
@@ -67,38 +67,35 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                 ColorizeAnimatedTextKit(
                   text: ['Messeco'],
                   colors: [
-                    Colors.lightGreen,
-                    Colors.green,
-                    Colors.lightGreenAccent,
-                    Colors.lime,
+                    kSecondaryColor,
+                    kColor2,
+                    kColor1,
+                    kPrimaryColor,
                   ],
                   textStyle: TextStyle(
-                    fontSize: 50.0,
+                    fontSize: 60.0,
                     fontWeight: FontWeight.w900,
                   ),
                 ),
               ],
             ),
             SizedBox(
-              height: 48.0,
+              height: 30.0,
             ),
             RoundedButton(
-              color: Colors.lime,
-              textColor: Colors.green.shade800,
-              title: 'Log In',
+              color: kPrimaryColor,
+              textColor: kSecondaryColor,
+              title: '➟',
               onPressed: () {
                 //Go to log in screen.
-                Navigator.pushNamed(context, LoginScreen.id);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => LoginScreen(),
+                  ),
+                );
               },
-            ),
-            RoundedButton(
-              color: Colors.green,
-              textColor: Colors.limeAccent,
-              title: 'Register',
-              onPressed: () {
-                //Go to log in screen.
-                Navigator.pushNamed(context, RegistrationScreen.id);
-              },
+              textSize: 40,
             ),
           ],
         ),
