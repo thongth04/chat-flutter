@@ -33,3 +33,9 @@ const kTextFieldDecoration = InputDecoration(
     borderRadius: BorderRadius.all(Radius.circular(32.0)),
   ),
 );
+
+const kPrimaryColor = Color(0xff68b2a0);
+const kSecondaryColor = Color(0xff2c6975);
+const kGreyColor = Colors.grey;
+const kColor1 = Color(0xffcde0c9);
+const kColor2 = Color(0xffe0ecde);
